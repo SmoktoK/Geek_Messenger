@@ -15,16 +15,7 @@ def create_parser():
 
 
 def process_client_message(message):
-    '''
-    Обработчик сообщений от клиентов, принимает словарь -
-    сообщение от клиента, проверяет корректность,
-    возвращает словарь-ответ для клиента
-
-    :param message:
-    :return:
-    '''
-    if ACTION in message and message[ACTION] == PRESENCE and TIME in message and USER in message and message[USER][
-        ACCOUNT_NAME] == 'Guest':
+    if ACTION in message and message[ACTION] == PRESENCE and TIME in message and USER in message and message[USER][ACCOUNT_NAME] == 'Guest':
         return {RESPONSE: 200}
     return {
         RESPONSE: 400,
@@ -33,18 +24,15 @@ def process_client_message(message):
 
 
 def main():
+    #  Создаем парсер командной строки
     parser = create_parser()
     connect_data = parser.parse_args()
     listen_address = connect_data.address
     listen_port = connect_data.port
-
     # Готовим сокет
-
     transport = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     transport.bind((listen_address, listen_port))
-
     # Слушаем порт
-
     transport.listen(MAX_CONNECTIONS)
 
     while True:

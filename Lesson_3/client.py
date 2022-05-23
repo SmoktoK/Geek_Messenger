@@ -11,6 +11,7 @@ from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, \
 
 def create_parser():
     parser = argparse.ArgumentParser()
+    #  Ключи для парсера командной строки
     parser.add_argument('-p', '--port', type=int, default=DEFAULT_PORT)
     parser.add_argument('-a', '--address', default=DEFAULT_IP_ADDRESS)
     return parser
@@ -53,7 +54,7 @@ def main():
         answer = process_ans(get_message(transport))
         print(answer)
     except (ValueError, json.JSONDecodeError):
-        print('Не удалось декодировать сообщение сервера.')
+        print('Сообщение не декодировано.')
 
 
 if __name__ == '__main__':
