@@ -1,0 +1,11 @@
+amount: 4
+cars:
+- bmw
+- audi
+- mersedes
+- lada
+price:
+  audi: 18000€
+  bmw: 20000€
+  lada: 1500€
+  mersedes: 22000€
