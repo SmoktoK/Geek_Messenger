@@ -1,11 +1,14 @@
 import argparse
 import json
 import socket
+import logging
+import log.server_log_config
 
 from common.utils import get_message, send_message
 from common.variables import ACTION, ACCOUNT_NAME, RESPONSE, MAX_CONNECTIONS, \
     PRESENCE, TIME, USER, ERROR, DEFAULT_PORT, DEFAULT_IP_ADDRESS
 
+server_loger = logging.getLogger('server')
 
 def create_parser():
     parser = argparse.ArgumentParser()
@@ -15,6 +18,7 @@ def create_parser():
 
 
 def process_client_message(message):
+    server_loger.debug(f'Разбор сообщения от клиента : {message}')
     if ACTION in message and message[ACTION] == PRESENCE and TIME in message and USER in message and message[USER][ACCOUNT_NAME] == 'Guest':
         return {RESPONSE: 200}
     return {
@@ -27,8 +31,10 @@ def main():
     #  Создаем парсер командной строки
     parser = create_parser()
     connect_data = parser.parse_args()
+
     listen_address = connect_data.address
     listen_port = connect_data.port
+    server_loger.info(f'Сервер запущен {listen_address}:{listen_port}!')
     # Готовим сокет
     transport = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     transport.bind((listen_address, listen_port))
@@ -37,17 +43,18 @@ def main():
 
     while True:
         client, client_address = transport.accept()
+        server_loger.info(f'Установлено соединение с клиентом {client_address}')
         try:
             message_from_client = get_message(client)
-            print(message_from_client)
+            server_loger.debug(f'Получено сообщение от клиента: {message_from_client}')
             # {'action': 'presence', 'time': 1573760672.167031, 'user': {'account_name': 'Guest'}}
             response = process_client_message(message_from_client)
+            server_loger.debug(f'Клиенту отправлен ответ: {response}')
             send_message(client, response)
             client.close()
         except (ValueError, json.JSONDecodeError):
-            print('Принято некорректное сообщение от клиента.')
+            server_loger.error(f'Принято некорректное сообщение от клиента.')
             client.close()
-
 
 if __name__ == '__main__':
     main()
