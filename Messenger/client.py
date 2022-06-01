@@ -3,7 +3,8 @@ import json
 import logging
 import socket
 import time
-import log.client_log_config
+import traceback
+from log import client_log_config
 
 from common.utils import get_message, send_message
 from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, \
@@ -12,6 +13,16 @@ from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, \
 client_logger = logging.getLogger('client')
 
 
+def log(func_to_log):
+    def log_saver(*args, **kwargs):
+        ret = func_to_log(*args, **kwargs)
+        client_logger.debug(f'Вызвана функция {func_to_log.__name__} c параметрами {args}, {kwargs}. '
+                            f'из модуля {func_to_log.__module__}. Вызов из'
+                            f' функции {traceback.format_stack()[0].strip().split()[-1]}.')
+        return ret
+    return log_saver
+
+@log
 def create_parser():
     parser = argparse.ArgumentParser()
     #  Ключи для парсера командной строки
@@ -19,7 +30,7 @@ def create_parser():
     parser.add_argument('-a', '--address', default=DEFAULT_IP_ADDRESS)
     return parser
 
-
+@log
 def create_presence(account_name='Guest'):  # отправка присутствия клиента
     out = {
         ACTION: PRESENCE,
@@ -31,7 +42,7 @@ def create_presence(account_name='Guest'):  # отправка присутст�
     client_logger.debug(f'{PRESENCE} сообщение сформировано для {account_name}')
     return out
 
-
+@log
 def process_ans(message):  # ответ сервера
     client_logger.debug(f'Сообщение от сервера: {message}')
     if RESPONSE in message:

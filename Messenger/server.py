@@ -1,8 +1,9 @@
 import argparse
 import json
-import socket
 import logging
-import log.server_log_config
+import socket
+import traceback
+from log import server_log_config
 
 from common.utils import get_message, send_message
 from common.variables import ACTION, ACCOUNT_NAME, RESPONSE, MAX_CONNECTIONS, \
@@ -10,16 +11,28 @@ from common.variables import ACTION, ACCOUNT_NAME, RESPONSE, MAX_CONNECTIONS, \
 
 server_loger = logging.getLogger('server')
 
+
+def log(func_to_log):
+    def log_saver(*args, **kwargs):
+        ret = func_to_log(*args, **kwargs)
+        server_loger.debug(f'Вызвана функция {func_to_log.__name__} c параметрами {args}, {kwargs}. '
+                           f'из модуля {func_to_log.__module__}. Вызов из'
+                           f' функции {traceback.format_stack()[0].strip().split()[-1]}.')
+        return ret
+    return log_saver
+
+@log
 def create_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('-p', '--port', type=int, default=DEFAULT_PORT)
     parser.add_argument('-a', '--address', default=DEFAULT_IP_ADDRESS)
     return parser
 
-
+@log
 def process_client_message(message):
     server_loger.debug(f'Разбор сообщения от клиента : {message}')
-    if ACTION in message and message[ACTION] == PRESENCE and TIME in message and USER in message and message[USER][ACCOUNT_NAME] == 'Guest':
+    if ACTION in message and message[ACTION] == PRESENCE and TIME in message and USER in message and message[USER][
+        ACCOUNT_NAME] == 'Guest':
         return {RESPONSE: 200}
     return {
         RESPONSE: 400,
@@ -55,6 +68,7 @@ def main():
         except (ValueError, json.JSONDecodeError):
             server_loger.error(f'Принято некорректное сообщение от клиента.')
             client.close()
+
 
 if __name__ == '__main__':
     main()
