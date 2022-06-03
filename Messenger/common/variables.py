@@ -8,7 +8,12 @@ ACTION = 'action'
 TIME = 'time'
 USER = 'user'
 ACCOUNT_NAME = 'account_name'
+TEXT_MESSAGE = 'text_mess'
+MESSAGE = 'message'
+SENDER = 'sender'
 # Прочие ключи
 PRESENCE = 'presence'
 RESPONSE = 'response'
 ERROR = 'error'
+DEF_MODE = 'listen'
+

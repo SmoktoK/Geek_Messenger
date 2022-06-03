@@ -47,7 +47,7 @@ def create_mess(sock, account_name='Guest'):
         client_logger.info('User send stop ')
         sys.exit(0)
     message_dict = {
-        ACTION: PRESENCE,
+        ACTION: MESSAGE,
         TIME: time.time(),
         ACCOUNT_NAME: account_name,
         TEXT_MESSAGE: message
@@ -99,6 +99,7 @@ def main():
         message_to_server = create_presence()
         send_message(transport, message_to_server)
         client_logger.info(f'Подключение к серверу {server_address}:{server_port} прошло успешно.')
+        print('Подключение прошло успешно!')
     except ConnectionRefusedError:
         client_logger.critical(f' Не удалось подключиться к серверу {server_address}:{server_port}')
     except (ValueError, json.JSONDecodeError):
