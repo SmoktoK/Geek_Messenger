@@ -99,8 +99,8 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Server App')
     parser.add_argument("-p", action="store", dest="port", type=int, default=7777,
                         help="enter port number, default is 7777")
-    parser.add_argument("-a", action="store", dest="addr", type=str, default='0.0.0.0',
-                        help="enter IP address, default is 0.0.0.0")
+    parser.add_argument("-a", action="store", dest="addr", type=str, default='127.0.0.1',
+                        help="enter IP address, default is 127.0.0.1")
     return parser.parse_args()
 
 

@@ -155,8 +155,8 @@ def client_loop(host, port):  # отправляет сообщения в ча�
 # получить и обработать параметры командной строки
 def parse_args():
     parser = argparse.ArgumentParser(description='Client App')
-    parser.add_argument("-a", action="store", dest="addr", type=str, default='localhost',
-                        help="enter IP address, default is localhost")
+    parser.add_argument("-a", action="store", dest="addr", type=str, default='127.0.0.1',
+                        help="enter IP address, default is 127.0.0.1")
     parser.add_argument("-p", action="store", dest="port", type=int, default=7777,
                         help="enter port number, default is 7777")
     # parser.add_argument("-t", action="store", dest="trace", type=str, default='false',
