@@ -1,7 +1,7 @@
 import sys
 import logging
-import log.server_log_config
-import log.client_log_config
+import server_log_config
+import client_log_config
 import traceback
 
 if sys.argv[0].find('client') == -1:

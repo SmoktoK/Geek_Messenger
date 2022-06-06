@@ -1,132 +1,180 @@
+from socket import *
+from threading import Thread
+import time
 import argparse
 import json
 import logging
-import socket
-import sys
-import time
-from decos import log
-from log import client_log_config
+import inspect
+import client_log_config
 
-from common.utils import get_message, send_message
-from common.variables import *
+cli_log = logging.getLogger('client')
 
-client_logger = logging.getLogger('client')
+enable_tracing = False
 
 
-# def log(func_to_log):
-#     def log_saver(*args, **kwargs):
-#         ret = func_to_log(*args, **kwargs)
-#         client_logger.debug(f'Вызвана функция {func_to_log.__name__} c параметрами {args}, {kwargs}. '
-#                             f'из модуля {func_to_log.__module__}. Вызов из'
-#                             f' функции {traceback.format_stack()[0].strip().split()[-1]}.')
-#         return ret
-#     return log_saver
+def log(func):
+    # print("decorator working")
+    if enable_tracing:
+        def callf(*args, **kwargs):
+            cli_log.info("Функция %s: вызвана из функции  %s" % (func.__name__, inspect.stack()[1][3]))
+            r = func(*args, **kwargs)
+            cli_log.info("%s вернула %s" % (func.__name__, r))
+            return r
 
-@log
-def create_parser():
-    parser = argparse.ArgumentParser()
-    #  Ключи для парсера командной строки
-    parser.add_argument('-p', '--port', type=int, default=DEFAULT_PORT)
-    parser.add_argument('-a', '--address', default=DEFAULT_IP_ADDRESS)
-    parser.add_argument('-m', '--mode', default=DEF_MODE)
-    return parser
-
-@log
-def mess_from_server(message):
-    if ACTION in message and message[ACTION] == MESSAGE and SENDER in message and TEXT_MESSAGE in message:
-        print(f'получено сообщение от пользователя: {message[SENDER]}:\n {message[TEXT_MESSAGE]}')
-        client_logger.info(f'получено сообщение от пользователя: {message[SENDER]}:\n {message[TEXT_MESSAGE]}')
+        return callf
     else:
-        client_logger.error(f'Получено некорректное сообщение {message} ')
+        return func
+
 
 @log
-def create_mess(sock, account_name='Guest'):
-    message = input(f'Input message, or \'quite\' for exit!')
-    if message == 'quite':
-        sock.close()
-        client_logger.info('User send stop ')
-        sys.exit(0)
-    message_dict = {
-        ACTION: PRESENCE,
-        TIME: time.time(),
-        ACCOUNT_NAME: account_name,
-        TEXT_MESSAGE: message
-    }
-    client_logger.debug(f'Сформировано сообщение: {message_dict}')
-    return message_dict
+def parse_message(str1):  # разобрать сообщение сервера;
+    try:
+        serv_message = json.loads(str1)
+        if serv_message["response"] in (100, 101, 102, 200, 201, 202):
+            cli_log.info("Сообщение доставлено на сервер, код возврата %s, %s " % (
+                str(serv_message["response"]), serv_message["alert"]))
+            return serv_message
+    except json.decoder.JSONDecodeError:
+        cli_log.critical("Сообщение от сервера не распознано: %s ", str1)
+        return {
+            "response": 400,
+            "time": time.time(),
+            "alert": "Сообщение от сервера не распознано"
+        }
+
 
 @log
-def create_presence(account_name='Guest'):
-    # отправка сообщения
-    out = {
-        ACTION: PRESENCE,
-        TIME: time.time(),
-        USER: {
-            ACCOUNT_NAME: account_name
+def presence(username, status):  # сформировать presence-сообщение;
+    return {
+        "action": "presence",
+        "time": time.time(),
+        "type": "status",
+        "user": {
+            "account_name": username,
+            "status": status
         }
     }
-    client_logger.debug(f'{PRESENCE} сообщение сформировано для {account_name}')
-    return out
+
 
 @log
-def process_ans(message):  # ответ сервера
-    client_logger.debug(f'Сообщение от сервера: {message}')
-    if RESPONSE in message:
-        if message[RESPONSE] == 200:
-            return '200 : OK'
-        return f'400 : {message[ERROR]}'
-    raise ValueError
+def message_to_user(from_user, to_user, msg):  # сформировать сообщение;
+    # to_user = ""
+    # while (len(to_user) == 0) or (len(to_user) > 25):
+    #     to_user = input("Кому отправить сообщение:")
+    #     if (len(to_user) == 0) or (len(to_user) > 25):
+    #         print("имя пользователя/название чата должно содержать от 1 до 25 символов")
+    # msg = ""
+    # while (len(msg) == 0) or (len(msg) > 500):
+    #     msg = input("Введите сообщение:")
+    #     if (len(msg) == 0) or (len(msg) > 500):
+    #         print("сообщение должно содержать максимум 500 символов")
+    return {
+        "action": "msg",
+        "time": time.time(),
+        "to": to_user,
+        "from": from_user,
+        "encoding": "utf-8",
+        "message": msg
+    }
+
+
+def message_chat(from_user, msg):  # сформировать сообщение;
+    return {
+        "action": "msg",
+        "time": time.time(),
+        "to": "ALL",  # вообще-то здесь указывается room name,
+        # пока упрощенный чат в котором участвуют все подключенные
+        "from": from_user,
+        "encoding": "utf-8",
+        "message": msg
+    }
+
+
+def join_chat(from_user, room_name):  # Присоединиться к чату
+    return {
+        "action": "join",
+        "time": time.time(),
+        "from": from_user,
+        "room": room_name
+    }
+
+
+def leave_chat(from_user, room_name):  # Покинуть чат
+    return {
+        "action": "leave",
+        "time": time.time(),
+        "from": from_user,
+        "room": room_name
+    }
+
+
+def read_server_messages(sock):
+    while True:  # дальше в цикле получаем сообщения
+        data = sock.recv(1024).decode('utf-8')
+        server_resp = {}
+        server_resp = parse_message(data)
+        print(server_resp["alert"])
+
+
+def client_loop(host, port):  # отправляет сообщения в чат
+    # и читает из него в отдельном потоке
+    with socket(AF_INET, SOCK_STREAM) as sock:  # Создать сокет TCP
+        cli_log.info("Попытка соединения с %s по порту %s" % (host, port))
+        # sock.connect(ADDRESS)   # Соединиться с сервером
+        try:
+            sock.connect((host, port))
+        except ConnectionRefusedError:
+            cli_log.critical("Сервер %s недоступен по порту %s" % (host, port))
+            return
+        except OSError as err:
+            cli_log.critical("OS error: {0}".format(err))
+            return
+        else:
+            cli_log.info("Подключен к %s по порту %s" % (host, port))
+        username = input('Имя пользователя: ')
+        msg = json.dumps(presence(username, "Yep, I am here!"))
+        sock.send(msg.encode('utf-8'))  # Отправить сообщение presense
+        print("presense message sent")
+        data = sock.recv(1024).decode('utf-8')  # Получить ответ на него
+        server_resp = parse_message(data)
+        print(server_resp["alert"])
+        # запускаем поток вычитывания серверных сообщений
+        receiver = read_server_messages(sock)
+        th_sender = Thread(target=receiver)
+        th_sender.daemon = True
+        th_sender.start()
+
+        while True:  # дальше в цикле отправляем сообщения
+            msg = input('Ваше сообщение: ')
+            if msg == 'exit':
+                break
+            msg = json.dumps(message_chat(username, msg))
+            sock.send(msg.encode('utf-8'))  # Отправить!
+
+
+# получить и обработать параметры командной строки
+def parse_args():
+    parser = argparse.ArgumentParser(description='Client App')
+    parser.add_argument("-a", action="store", dest="addr", type=str, default='localhost',
+                        help="enter IP address, default is localhost")
+    parser.add_argument("-p", action="store", dest="port", type=int, default=7777,
+                        help="enter port number, default is 7777")
+    # parser.add_argument("-t", action="store", dest="trace", type=str, default='false',
+    #                    help="enter 'true' to enable tracing, default is 'false'")
+    return parser.parse_args()
 
 
 def main():
-    #  активация парсера аргументов командной строки
-    parser = create_parser()
-    connect_data = parser.parse_args()
-    server_address = connect_data.address
-    server_port = connect_data.port
-    client_mode = connect_data.mode
-    if client_mode not in ('listen', 'send'):
-        client_logger.critical(f'Указан недопустимы режим работы клиента {client_mode}, '
-                               f'Необходимо указать: listen или send')
-        sys.exit(1)
-    else:
-        print(f'Запущен клиент с режимом работы: {client_mode}')
-    client_logger.info(f'Попытка подключения к серверу {server_address}:{server_port}')
-
-    transport = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    try:
-        transport.connect((server_address, server_port))
-        message_to_server = create_presence()
-        send_message(transport, message_to_server)
-        client_logger.info(f'Подключение к серверу {server_address}:{server_port} прошло успешно.')
-    except ConnectionRefusedError:
-        client_logger.critical(f' Не удалось подключиться к серверу {server_address}:{server_port}')
-    except (ValueError, json.JSONDecodeError):
-        client_logger.error(f'Сообщение не декодировано.')
-    else:
-        answer = process_ans(get_message(transport))
-        client_logger.info(f'Ответ от сервера принят: {answer}')
-        if client_mode == 'send':
-            print('Режим работы- отправка сообщений')
-        else:
-            print('Режим работы- прием сообщений')
-
-        while True:
-            if client_mode == 'send':
-                try:
-                    send_message(transport, create_mess(transport))
-                except (ConnectionRefusedError, ConnectionError, ConnectionAbortedError):
-                    client_logger.error(f'Соединение с {server_address} потеряно.')
-                    sys.exit(1)
-
-            if client_mode == 'listen':
-                try:
-                    mess_from_server(get_message(transport))
-                except (ConnectionRefusedError, ConnectionError, ConnectionAbortedError):
-                    client_logger.error(f'Соединение с {server_address} потеряно.')
-                    sys.exit(1)
+    # print("main working")
+    cli_log.debug('Старт приложения')
+    args = parse_args()
+    port = args.port
+    host = args.addr
+    # enable_tracing = args.trace
+    print("Connecting to %s:%s" % (host, port))
+    client_loop(host, port)
 
 
-
+# Entry point
 if __name__ == '__main__':
     main()

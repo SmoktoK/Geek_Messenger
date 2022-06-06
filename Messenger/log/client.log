@@ -387,3 +387,159 @@
 2022-06-03 14:12:27,766 DEBUG client2.py Сформировано presence сообщение для пользователя Guest
 2022-06-03 14:12:27,766 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
 2022-06-03 14:12:27,766 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50839), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654254747.766352, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:35:08,162 DEBUG decos.py Вызвана функция create_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:35:08,163 INFO client1.py Попытка подключения к серверу 127.0.0.1:7777
+2022-06-03 14:35:08,164 DEBUG client1.py presence сообщение сформировано для Guest
+2022-06-03 14:35:08,164 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:35:08,166 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=564, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1079), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256108.16436, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:35:08,166 INFO client1.py Подключение к серверу 127.0.0.1:7777 прошло успешно.
+2022-06-03 14:35:29,131 DEBUG decos.py Вызвана функция create_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:35:29,131 INFO client.py Попытка подключения к серверу 127.0.0.1:7777
+2022-06-03 14:35:29,132 DEBUG client.py presence сообщение сформировано для Guest
+2022-06-03 14:35:29,133 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:35:29,134 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=584, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1097), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256129.1322143, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:35:29,134 INFO client.py Подключение к серверу 127.0.0.1:7777 прошло успешно.
+2022-06-03 14:36:09,363 DEBUG decos.py Вызвана функция create_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:36:09,365 INFO client1.py Попытка подключения к серверу 127.0.0.1:7777
+2022-06-03 14:36:09,368 DEBUG client1.py presence сообщение сформировано для Guest
+2022-06-03 14:36:09,372 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:36:09,375 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=772, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 19711), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256169.3685818, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:36:09,376 INFO client1.py Подключение к серверу 127.0.0.1:7777 прошло успешно.
+2022-06-03 14:37:42,577 DEBUG decos.py Вызвана функция create_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:37:42,577 INFO client1.py Попытка подключения к серверу 127.0.0.1:7777
+2022-06-03 14:37:42,578 DEBUG client1.py presence сообщение сформировано для Guest
+2022-06-03 14:37:42,579 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:37:42,580 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=800, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1037), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256262.578043, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:37:42,580 INFO client1.py Подключение к серверу 127.0.0.1:7777 прошло успешно.
+2022-06-03 14:39:09,512 DEBUG decos.py Вызвана функция create_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:39:09,513 INFO client1.py Попытка подключения к серверу 127.0.0.1:7777
+2022-06-03 14:39:09,515 DEBUG client1.py presence сообщение сформировано для Guest
+2022-06-03 14:39:09,516 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:39:09,517 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=872, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1088), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256349.5155177, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:39:09,517 INFO client1.py Подключение к серверу 127.0.0.1:7777 прошло успешно.
+2022-06-03 14:39:15,067 DEBUG client1.py Сформировано сообщение: {'action': 'message', 'time': 1654256355.0673888, 'account_name': 'Guest', 'text_mess': 'ghbdtn'}
+2022-06-03 14:39:15,068 DEBUG decos.py Вызвана функция create_mess c параметрами (<socket.socket fd=872, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1088), raddr=('127.0.0.1', 7777)>,), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:39:15,069 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=872, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1088), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'time': 1654256355.0673888, 'account_name': 'Guest', 'text_mess': 'ghbdtn'}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:39:33,056 DEBUG client1.py Сформировано сообщение: {'action': 'message', 'time': 1654256373.0560074, 'account_name': 'Guest', 'text_mess': 'Ghbdtn!'}
+2022-06-03 14:39:33,057 DEBUG decos.py Вызвана функция create_mess c параметрами (<socket.socket fd=872, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1088), raddr=('127.0.0.1', 7777)>,), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:39:33,058 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=872, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1088), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'time': 1654256373.0560074, 'account_name': 'Guest', 'text_mess': 'Ghbdtn!'}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:40:06,568 DEBUG client1.py Сформировано сообщение: {'action': 'message', 'time': 1654256406.5686145, 'account_name': 'Guest', 'text_mess': 'qweqwe'}
+2022-06-03 14:40:06,570 DEBUG decos.py Вызвана функция create_mess c параметрами (<socket.socket fd=872, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1088), raddr=('127.0.0.1', 7777)>,), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:40:06,571 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=872, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1088), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'time': 1654256406.5686145, 'account_name': 'Guest', 'text_mess': 'qweqwe'}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:41:06,900 DEBUG decos.py Вызвана функция create_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:41:06,901 INFO client.py Попытка подключения к серверу 127.0.0.1:7777
+2022-06-03 14:41:06,905 DEBUG client.py presence сообщение сформировано для Guest
+2022-06-03 14:41:06,910 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:41:06,913 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=768, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1042), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256466.9059072, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:41:06,914 INFO client.py Подключение к серверу 127.0.0.1:7777 прошло успешно.
+2022-06-03 14:41:25,187 DEBUG client1.py Сформировано сообщение: {'action': 'message', 'time': 1654256485.1876183, 'account_name': 'Guest', 'text_mess': 'tyui'}
+2022-06-03 14:41:25,188 DEBUG decos.py Вызвана функция create_mess c параметрами (<socket.socket fd=872, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1088), raddr=('127.0.0.1', 7777)>,), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:41:25,189 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=872, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1088), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'time': 1654256485.1876183, 'account_name': 'Guest', 'text_mess': 'tyui'}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:41:44,071 DEBUG decos.py Вызвана функция create_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:41:44,072 INFO client1.py Попытка подключения к серверу 127.0.0.1:7777
+2022-06-03 14:41:44,073 DEBUG client1.py presence сообщение сформировано для Guest
+2022-06-03 14:41:44,074 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:41:44,079 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=688, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1065), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256504.0730188, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:41:44,080 INFO client1.py Подключение к серверу 127.0.0.1:7777 прошло успешно.
+2022-06-03 14:41:54,897 DEBUG client1.py Сформировано сообщение: {'action': 'message', 'time': 1654256514.8978217, 'account_name': 'Guest', 'text_mess': 'Hi'}
+2022-06-03 14:41:54,898 DEBUG decos.py Вызвана функция create_mess c параметрами (<socket.socket fd=688, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1065), raddr=('127.0.0.1', 7777)>,), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:41:54,899 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=688, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1065), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'time': 1654256514.8978217, 'account_name': 'Guest', 'text_mess': 'Hi'}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:42:35,482 DEBUG client1.py Сформировано сообщение: {'action': 'message', 'time': 1654256555.482706, 'account_name': 'Guest', 'text_mess': 'werwersdf'}
+2022-06-03 14:42:35,483 DEBUG decos.py Вызвана функция create_mess c параметрами (<socket.socket fd=688, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1065), raddr=('127.0.0.1', 7777)>,), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:42:35,484 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=688, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1065), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'time': 1654256555.482706, 'account_name': 'Guest', 'text_mess': 'werwersdf'}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:42:53,423 DEBUG decos.py Вызвана функция create_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:42:53,425 INFO client1.py Попытка подключения к серверу 127.0.0.1:7777
+2022-06-03 14:42:53,426 DEBUG client1.py presence сообщение сформировано для Guest
+2022-06-03 14:42:53,426 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:42:53,428 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=720, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1052), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256573.4263327, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:42:53,428 INFO client1.py Подключение к серверу 127.0.0.1:7777 прошло успешно.
+2022-06-03 14:42:58,892 DEBUG decos.py Вызвана функция create_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:42:58,892 INFO client.py Попытка подключения к серверу 127.0.0.1:7777
+2022-06-03 14:42:58,893 DEBUG client.py presence сообщение сформировано для Guest
+2022-06-03 14:42:58,893 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:42:58,894 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=668, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1058), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256578.8934953, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:42:58,894 INFO client.py Подключение к серверу 127.0.0.1:7777 прошло успешно.
+2022-06-03 14:43:05,155 DEBUG client1.py Сформировано сообщение: {'action': 'message', 'time': 1654256585.1555307, 'account_name': 'Guest', 'text_mess': 'qweasdasd'}
+2022-06-03 14:43:05,156 DEBUG decos.py Вызвана функция create_mess c параметрами (<socket.socket fd=720, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1052), raddr=('127.0.0.1', 7777)>,), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:43:05,157 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=720, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1052), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'time': 1654256585.1555307, 'account_name': 'Guest', 'text_mess': 'qweasdasd'}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:44:59,681 DEBUG decos.py Вызвана функция create_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:44:59,682 INFO client.py Попытка подключения к серверу 127.0.0.1:7777
+2022-06-03 14:44:59,683 DEBUG client.py presence сообщение сформировано для Guest
+2022-06-03 14:44:59,683 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:44:59,684 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=768, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1063), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256699.6830244, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:44:59,684 INFO client.py Подключение к серверу 127.0.0.1:7777 прошло успешно.
+2022-06-03 14:45:04,341 DEBUG decos.py Вызвана функция create_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:45:04,342 INFO client1.py Попытка подключения к серверу 127.0.0.1:7777
+2022-06-03 14:45:04,344 DEBUG client1.py presence сообщение сформировано для Guest
+2022-06-03 14:45:04,346 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:45:04,348 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=664, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1069), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256704.3448021, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:45:04,349 INFO client1.py Подключение к серверу 127.0.0.1:7777 прошло успешно.
+2022-06-03 14:45:07,764 DEBUG client1.py Сформировано сообщение: {'action': 'message', 'time': 1654256707.7645116, 'account_name': 'Guest', 'text_mess': 'pouweyrt'}
+2022-06-03 14:45:07,765 DEBUG decos.py Вызвана функция create_mess c параметрами (<socket.socket fd=664, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1069), raddr=('127.0.0.1', 7777)>,), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:45:07,766 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=664, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1069), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'time': 1654256707.7645116, 'account_name': 'Guest', 'text_mess': 'pouweyrt'}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:45:51,736 DEBUG decos.py Вызвана функция create_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:45:51,736 INFO client1.py Попытка подключения к серверу 127.0.0.1:7777
+2022-06-03 14:45:51,737 DEBUG client1.py presence сообщение сформировано для Guest
+2022-06-03 14:45:51,737 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:45:51,738 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=648, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1081), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256751.737029, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:45:51,738 INFO client1.py Подключение к серверу 127.0.0.1:7777 прошло успешно.
+2022-06-03 14:46:28,880 DEBUG decos.py Вызвана функция create_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:46:28,880 INFO client.py Попытка подключения к серверу 127.0.0.1:7777
+2022-06-03 14:46:28,881 DEBUG client.py presence сообщение сформировано для Guest
+2022-06-03 14:46:28,881 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:46:28,883 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=748, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1042), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256788.8815086, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:46:28,884 INFO client.py Подключение к серверу 127.0.0.1:7777 прошло успешно.
+2022-06-03 14:46:44,077 DEBUG decos.py Вызвана функция create_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:46:44,077 INFO client1.py Попытка подключения к серверу 127.0.0.1:7777
+2022-06-03 14:46:44,080 DEBUG client1.py presence сообщение сформировано для Guest
+2022-06-03 14:46:44,080 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:46:44,081 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1054), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256804.0808756, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:46:44,081 INFO client1.py Подключение к серверу 127.0.0.1:7777 прошло успешно.
+2022-06-03 14:47:05,506 DEBUG decos.py Вызвана функция create_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:47:05,507 INFO client1.py Попытка подключения к серверу 127.0.0.1:7777
+2022-06-03 14:47:05,507 DEBUG client1.py presence сообщение сформировано для Guest
+2022-06-03 14:47:05,508 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:47:05,509 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=824, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1065), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256825.5079305, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:47:05,509 INFO client1.py Подключение к серверу 127.0.0.1:7777 прошло успешно.
+2022-06-03 14:47:08,973 DEBUG client1.py Сформировано сообщение: {'action': 'message', 'time': 1654256828.9732208, 'account_name': 'Guest', 'text_mess': '321321'}
+2022-06-03 14:47:08,974 DEBUG decos.py Вызвана функция create_mess c параметрами (<socket.socket fd=824, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1065), raddr=('127.0.0.1', 7777)>,), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:47:08,975 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=824, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1065), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'time': 1654256828.9732208, 'account_name': 'Guest', 'text_mess': '321321'}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:47:51,345 DEBUG decos.py Вызвана функция create_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:47:51,346 INFO client1.py Попытка подключения к серверу 127.0.0.1:7777
+2022-06-03 14:47:51,348 DEBUG client1.py presence сообщение сформировано для Guest
+2022-06-03 14:47:51,352 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:47:51,355 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=888, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 18140), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256871.348439, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:47:51,356 INFO client1.py Подключение к серверу 127.0.0.1:7777 прошло успешно.
+2022-06-03 14:48:09,312 DEBUG client1.py Сформировано сообщение: {'action': 'message', 'time': 1654256889.3110044, 'account_name': 'Guest', 'text_mess': 'qweqwe'}
+2022-06-03 14:48:09,312 DEBUG decos.py Вызвана функция create_mess c параметрами (<socket.socket fd=888, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 18140), raddr=('127.0.0.1', 7777)>,), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:48:09,313 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=888, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 18140), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'time': 1654256889.3110044, 'account_name': 'Guest', 'text_mess': 'qweqwe'}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:48:34,030 DEBUG decos.py Вызвана функция arg_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:48:34,030 INFO client2.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-06-03 14:48:34,031 DEBUG client2.py Сформировано presence сообщение для пользователя Guest
+2022-06-03 14:48:34,031 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:48:34,032 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=768, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 26070), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256914.0312748, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:49:15,277 DEBUG decos.py Вызвана функция arg_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:49:15,278 INFO client2.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-06-03 14:49:15,280 DEBUG client2.py Сформировано presence сообщение для пользователя Guest
+2022-06-03 14:49:15,281 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:49:15,283 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=708, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 30914), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654256955.280907, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:50:08,064 DEBUG decos.py Вызвана функция arg_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:50:08,064 INFO client2.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-06-03 14:50:08,065 DEBUG client2.py Сформировано presence сообщение для пользователя Guest
+2022-06-03 14:50:08,065 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:50:08,066 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=652, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 30923), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654257008.0657957, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:50:55,054 DEBUG decos.py Вызвана функция arg_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:50:55,057 INFO client2.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-06-03 14:51:11,125 DEBUG client2.py Сформировано presence сообщение для пользователя Guest
+2022-06-03 14:51:11,127 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:51:11,129 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=772, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 25903), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654257071.1253042, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:52:22,945 DEBUG decos.py Вызвана функция arg_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:52:22,945 INFO client2.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-06-03 14:52:27,433 DEBUG client2.py Сформировано presence сообщение для пользователя Guest
+2022-06-03 14:52:27,434 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:52:27,436 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=868, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 3177), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654257147.4334803, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
+2022-06-03 14:52:37,959 DEBUG decos.py Вызвана функция arg_parser c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:52:37,960 INFO client2.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-06-03 14:52:37,961 DEBUG client2.py Сформировано presence сообщение для пользователя Guest
+2022-06-03 14:52:37,962 DEBUG decos.py Вызвана функция create_presence c параметрами (), {}. из модуля __main__. Вызов из функции main().
+2022-06-03 14:52:37,963 DEBUG decos.py Вызвана функция send_message c параметрами (<socket.socket fd=868, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 33717), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1654257157.9612525, 'user': {'account_name': 'Guest'}}), {}. из модуля common.utils. Вызов из функции main().
